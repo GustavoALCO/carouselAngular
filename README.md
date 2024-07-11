@@ -1,3 +1,5 @@
+Projeto Teste para Aprender a Fazer uma carousel com animação no angular, 
+
 # CarouselAngular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.6.
