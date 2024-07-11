@@ -1,0 +1,28 @@
+<div class= "carousel" >                                                
+    <mat-card>
+        <ng-container *ngFor="let produto of imagem; let i = index">
+                             <!--Parte por gerenciar o index do carousel  -->
+            <mat-card-header
+            *ngIf="i === currentMovie" [@slideAnimation] = 'animationType'>
+                <!-- ngIf esta apenas para fazer a verificação para se o index possui o mesmo valor de courentMovie, ira aparecer o conteudo-->
+                <mat-card-title>{{produto.produto}}</mat-card-title>
+
+                <mat-card-subtitle>{{produto.descricao}}</mat-card-subtitle> 
+
+            </mat-card-header>
+            <img *ngIf="i === currentMovie" class="slide" [src]="produto.imagem" alt="" [@slideAnimation] = 'animationType'>
+                                                          <!--No SRC foi feito um Databinding, onde é usado para entender que a imagem não é estatica -->
+            <mat-card-content *ngIf="i === currentMovie" [@slideAnimation] = 'animationType'>
+                    <p>{{produto.preco}}</p>
+                    <p>{{produto.idProduto}}</p>
+            </mat-card-content>
+        </ng-container>
+
+        <button class="control prev" mat-mini-fab aria-label="Previous" (click)="onPeviousClick()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <button class="control next" mat-mini-fab aria-label="Next" (click)="onNextClick()">
+            <mat-icon>arrow_forward</mat-icon>
+        </button>
+    </mat-card>
+</div>
